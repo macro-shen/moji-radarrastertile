@@ -1,0 +1,33 @@
+{
+  "name": "moji_project",
+  "version": "1.0.0",
+  "engines": {
+    "node": "6.15.1"
+  },
+  "description": "Moji data process for radar and AQI data",
+  "main": "servelocally.js",
+  "author": "Mapbox",
+  "license": "Mapbox",
+  "scripts": {
+    "test": "nyc tape test/*.test.js",
+    "coverage": "nyc report --reporter html && opener coverage/index.html",
+    "upload-coverage": "nyc report --reporter json && codecov -f ./coverage/coverage-final.json",
+    "start": "./servelocally.js",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "@mapbox/mapbox-gl-native": "^4.1.0",
+    "@mapbox/sphericalmercator": "^1.1.0",
+    "archiver": "^3.0.0",
+    "fs": "0.0.1-security",
+    "sharp": "^0.18.4"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "codecov": "^3.1.0",
+    "nyc": "^13.1.0",
+    "opener": "^1.5.1",
+    "tape": "^4.5.1",
+    "webpack": "^3.9.1"
+  }
+}
